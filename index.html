@@ -551,7 +551,7 @@ Sila pilih tarikh dan waktu temu janji klinik seterusnya. Maklumat peringatan 3-
 </div>
 
 <script>
-const GOOGLE_SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbxZoqaetV4m7qVowC3uYYwbPgQwY2C_ZhQ2yv4fXZFHeCk25VVFi3dkW8DECEKaPh88/exec";
+const GOOGLE_SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbxZoqaetV4m7qVowC3uYYwbPgQwY2C_ZhQ2yv4fXZFHeCk25VVFi3dkW8DECEKaPh88/exec"
 
 const i18n = {
 ms: {
@@ -1029,7 +1029,7 @@ function processTcaSyncAndDownload() {
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(payload)
+    body: (()=>{const fd=new FormData();Object.entries(payload).forEach(([k,v])=>fd.append(k,v));return fd;})()
   })
   .then(response => {
     console.log("Backend response:", response.status);
@@ -1060,7 +1060,7 @@ function processTcaSyncAndDownload() {
 
   window.location.href = gCalUrl;
 
-}, 5000);
+}, 800);
 }
 </script>
 
