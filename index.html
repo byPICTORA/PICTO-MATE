@@ -371,7 +371,7 @@ Kami faham, menguruskan jadual harian dan temu janji klinik anak boleh menjadi s
 </button>
 
 <button class="btn-nav" style="background:#3B82F6; color:white;" onclick="showScreen('screen-history')">
-📜 Rekod Temujanji
+    📜 <span id="btn-history">Rekod Temujanji</span>
 </button>
 
 <hr style="border: 1px dashed #CBD5E1; margin: 25px 0;">
@@ -391,7 +391,7 @@ Kami faham, menguruskan jadual harian dan temu janji klinik anak boleh menjadi s
 <div class="faq-answer" id="faq-a3">P&P bermaksud Perkembangan dan Pertumbuhan. Ia merujuk kepada pemantauan fizikal, berat badan, ketinggian, serta pencapaian kemahiran motor dan kognitif anak mengikut jadual umur klinik.</div>
 </div>
 <div class="faq-item" onclick="toggleFaq(this)">
-<div class="faq-question"><span id="faq-q4">📌 M-CHAT tu pula apa jenis pemeriksaan?</span> <span>▼</span></div>
+<div class="faq-question"><span id="faq-q4">📌 apa itu pemeriksaan M-CHAT? pemeriksaan?</span> <span>▼</span></div>
 <div class="faq-answer" id="faq-a4">M-CHAT ialah singkatan bagi Modified Checklist for Autism in Toddlers. Ia merupakan alat saringan ringkas berbentuk borang soal selidik untuk menilai risiko autisme pada kanak-kanak berusia 16 hingga 30 bulan.</div>
 </div>
 
@@ -561,7 +561,9 @@ aboutIntro: "PICTO MATE ialah ekosistem Penanda Buku Pintar & Peringatan Digital
 aboutPicto: "Penanda buku fizikal berkod warna dan emoji. Faham tujuan temu janji anak dalam 3 saat sahaja!",
 aboutMate: "Sistem imbas QR pintar untuk masukkan peringatan temu janji terus ke kalendar telefon anda secara automatik.",
 aboutModes: "✨ **Dua Fungsi:** Boleh diselit dalam buku kesihatan anak, atau ditampal pada peti sejuk rumah menggunakan magnet!",
-checkMilestone: "Semak Perkembangan Anak", setTca: "Set Peringatan Temujanji (TCA)", alertRedflags: "Alert Tanda Bahaya (Red Flags)", faqHeader: "❓ SOALAN LAZIM (FAQ)",
+checkMilestone: "Semak Perkembangan Anak", setTca: "Set Peringatan Temujanji (TCA)", alertRedflags: "Alert Tanda Bahaya (Red Flags)",
+historyBtn: "Rekod Temujanji",
+ faqHeader: "❓ SOALAN LAZIM (FAQ)",
 q1: "💡 Kenapa perlu check perkembangan anak ke klinik?", a1: "Fasa umur 1.5 tahun hingga 6 tahun amat kritikal bagi perkembangan kognitif, motor, dan pertuturan kanak-kanak. Kesan awal dapat mengelakkan isu lewat (delay).",
 q2: "💡 Bagaimana sistem peringatan bertindak?", a2: "Sistem kami akan terus menyambungkan anda ke Google Calendar. Setelah anda menekan butang 'Simpan', borang temujanji akan terbuka secara automatik di Google Calendar anda. Anda hanya perlu tekan butang 'Save' untuk tetapkan peringatan automatik (1 minggu, 1 hari, dan 2 jam sebelum temujanji).",
 q3: "📌 Apakah maksud singkatan P&P pada bookmark?", a3: "P&P bermaksud Perkembangan dan Pertumbuhan. Ia merujuk kepada pemantauan fizikal, berat badan, ketinggian, serta pencapaian kemahiran motor dan kognitif anak mengikut jadual umur klinik.",
@@ -589,7 +591,11 @@ aboutIntro: "PICTO MATE is a Smart Bookmark & Digital Reminder ecosystem to ease
 aboutPicto: "Physical bookmark with color codes and emojis. Understand appointment goals in just 3 seconds!",
 aboutMate: "Smart QR scan system to instantly add appointment reminders directly to your phone calendar automatically.",
 aboutModes: "✨ **Dual Function:** Tuck it in your child's health record book, or stick it on the fridge using magnets!",
-checkMilestone: "Check Child Milestones", setTca: "Set Appointment Reminder (TCA)", alertRedflags: "Danger Signs Alert (Red Flags)", faqHeader: "❓ FREQUENTLY ASKED QUESTIONS (FAQ)",
+checkMilestone: "Check Child Milestones",
+setTca: "Set Appointment Reminder (TCA)",
+alertRedflags: "Danger Signs Alert (Red Flags)",
+historyBtn: "Appointment History",
+faqHeader: "❓ FREQUENTLY ASKED QUESTIONS (FAQ)",
 q1: "💡 Why check child development at the clinic?", a1: "The age phase from 1.5 to 6 years is extremely critical for a child's cognitive, motor, and language development. Early detection prevents delay issues.",
 q2: "💡 Bagaimana sistem peringatan bertindak?", a2: "The system generates a smart calendar file (.ics) with a 3-tier automated alarm system: 1 week before, 1 day before, and exactly 2 hours before your appointment.",
 q3: "📌 What is the meaning of P&P abbreviation on the bookmark?", a3: "P&P stands for Growth and Development (Perkembangan dan Pertumbuhan). It refers to the physical monitoring of weight, height, as well as the achievement of motor and cognitive milestones according to the clinic schedule.",
@@ -617,7 +623,11 @@ aboutIntro: "PICTO MATE 是一款智能书签与数字提醒生态系统，专�
 aboutPicto: "采用色彩编码与小表情的实体书签。只需 3 秒，即可秒懂门诊预约的目的！",
 aboutMate: "智能二维码扫描系统。一键扫描，即可自动将门诊预约提醒同步至手机日历中。",
 aboutModes: "✨ **双重功能：** 既可以夹 in 孩子的健康记录册中，也可以通过内置磁铁贴在冰箱上！",
-checkMilestone: "检查幼儿成长里程碑", setTca: "设置门诊预约提醒 (TCA)", alertRedflags: "危险信号警告 (红旗指南)", faqHeader: "❓ 常见问题 (FAQ)",
+checkMilestone: "检查幼儿成长里程碑",
+setTca: "设置门诊预约提醒 (TCA)",
+alertRedflags: "危险信号警告 (红旗指南)",
+historyBtn: "预约记录",
+faqHeader: "❓ 常见问题 (FAQ)",
 q1: "💡 为什么要在诊所检查孩子的发育情况？", a1: "1.5岁至6岁是儿童认知、运动和语言发育的关键时期。早期发现能有效预防发育迟缓问题。",
 q2: "💡 提醒系统是如何工作的？", a2: "系统将生成一个智能日历文件 (.ics)，带有3级自动警报：预约前1周、前1天以及前2小时。",
 q3: "📌 书签上的 P&P 缩写是什么意思？", a3: "P&P 代表“发育与成长”(Perkembangan dan Pertumbuhan)。它是指根据诊所时间表对儿童的体重、身高进行身体监测，以及运动 and 认知技能的发展情况。",
@@ -645,7 +655,12 @@ aboutIntro: "PICTO MATE என்பது உங்கள் குழந்த
 aboutPicto: "வண்ணக் குறியீடுகள் மற்றும் எமோஜிகளுடன் கூடிய இயற்பியல் புக்மார்க். சந்திப்பின் நோக்கத்தை வெறும் 3 வினாடிகளில் புரிந்து கொள்ளுங்கள்!",
 aboutMate: "ஸ்மார்ட் கியூஆர் ஸ்கேன் சிஸ்டம். சந்திப்பு நினைவூட்டல்களை உங்கள் ஃபோன் காலண்டரில் தானாகவே நேரடியாக சேர்க்கும்.",
 aboutModes: "✨ **இரட்டை செயல்பாடு:** இதை உங்கள் குழந்தையின் சுகாதாரப் பதிவு புத்தகத்தில் வைக்கலாம் அல்லது காந்தங்களைப் பயன்படுத்தி குளிர்சாதன பெட்டியில் ஒட்டலாம்!",
-checkMilestone: "குழந்தையின் வளர்ச்சியைச் சரிபார்க்கவும்", setTca: "சந்திப்பு நினைவூட்டல் (TCA)", alertRedflags: "அபாயக் குறियां எச்சரிக்கை (Red Flags)", faqHeader: "❓ அடிக்கடி கேட்கப்படும் கேள்vிகள் (FAQ)",
+checkMilestone: "குழந்தையின் வளர்ச்சியைச் சரிபார்க்கவும்",
+setTca: "சந்திப்பு நினைவூட்டல் (TCA)",
+alertRedflags: "அபாயக் குறियां எச்சரிக்கை (Red Flags)",
+historyBtn: "சந்திப்பு பதிவு",
+faqHeader: "❓ அடிக்கடி கேட்கப்படும் கேள்விகள் (FAQ)",
+
 q1: "💡 ஏன் குழந்தையின் வளர்ச்சியை மருத்துவமனையில் சரிபார்க்க வேண்டும்?", a1: "1.5 முதல் 6 வயது வரையிலான காலகட்டம் குழந்தையின் அறிவாற்றல், இயக்கம் மற்றும் மொழி வளர்ச்சிக்கு மிகவும் முக்கியமானது. முன்கூட்டியே கண்டறிதல் தாமதங்களைத் தடுக்கும்.",
 q2: "💡 நினைவூட்டல் அமைப்பு எவ்வாறு செயல்படுகிறது?", a2: "இந்த அமைப்பு 3-அடுக்கு தானியங்கி அலாரத்துடன் கூடிய ஸ்மார்ட் காலண்டர் கோப்பை (.ics) உருவாக்குகிறது: 1 வாரம் முன், 1 நாள் முன், மற்றும் சந்திப்பிற்கு சரியாக 2 மணி நேரத்திற்கு முன்.",
 q3: "📌 புக்மார்க்கில் உள்ள P&P என்பதன் அர்த்தம் என்ன?", a3: "P&P என்பது வளர்ச்சி மற்றும் முன்னேற்றம் (Perkembangan dan Pertumbuhan) ஆகும். It refers to the physical monitoring of weight, height, as well as the achievement of motor and cognitive milestones according to the clinic schedule.",
@@ -681,6 +696,7 @@ document.getElementById('btn-about-pictomate').innerText = dict.aboutBtn;
 document.getElementById('btn-check-milestone').innerText = dict.checkMilestone;
 document.getElementById('btn-set-tca').innerText = dict.setTca;
 document.getElementById('btn-alert-redflags').innerText = dict.alertRedflags;
+document.getElementById('btn-history').innerText = dict.historyBtn;
 document.getElementById('txt-faq-header').innerText = dict.faqHeader;
 document.getElementById('faq-q1').innerText = dict.q1;
 document.getElementById('faq-a1').innerText = dict.a1;
@@ -994,6 +1010,7 @@ function toggleFaq(element) {
         icon.innerText = '▲';
     }
 }
+
 function processTcaSyncAndDownload() {
   const dateVal = document.getElementById('tca-date').value;
   const timeVal = document.getElementById('tca-time').value;
@@ -1009,7 +1026,7 @@ function processTcaSyncAndDownload() {
   const syncStatus = document.getElementById('sync-status');
   syncStatus.style.display = 'flex';
 
-  // Simpan ke Local History
+  // Menyimpan ke Local History telefon pintar
   const history = JSON.parse(localStorage.getItem('pictoHistory') || '[]');
   const payload = {
     date: dateVal,
@@ -1018,12 +1035,9 @@ function processTcaSyncAndDownload() {
     clinic: clinic,
     created: new Date().toISOString()
   };
-
   history.push(payload);
   localStorage.setItem('pictoHistory', JSON.stringify(history));
-
-  // Google Calendar
-  const start = new Date(`${dateVal}T${timeVal}:00`);
+ const start = new Date(`${dateVal}T${timeVal}:00`);
   const end = new Date(start.getTime() + 30 * 60000);
 
   function formatDate(d) {
@@ -1031,59 +1045,44 @@ function processTcaSyncAndDownload() {
   }
 
   const title = `Temujanji Klinik Anak (${clinic}) - ${age}`;
-  const details =
-`PICTO MATE
+  const details = `PICTO MATE\n\nLawatan perkembangan kanak-kanak di ${clinic}.\n\nSila hubungi PIC/nurse in charge sekiranya tidak dapat hadir/ menukar temujanji\n\nSila hadir 30 minit awal.`;
+  const gCalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&details=${encodeURIComponent(details)}&dates=${formatDate(start)}/${formatDate(end)}`;
 
-Lawatan perkembangan kanak-kanak di ${clinic}.
+// --- FUNGSI LIVE DATA COLLECTION KE GOOGLE SHEET ---
+if (GOOGLE_SHEET_WEBAPP_URL) {
 
-Sila hubungi PIC/Nurse In Charge sekiranya tidak dapat hadir atau ingin menukar temujanji.
+  const fd = new FormData();
+  Object.entries(payload).forEach(([k, v]) => fd.append(k, v));
 
-Sila hadir 30 minit awal.`;
+  fetch(GOOGLE_SHEET_WEBAPP_URL, {
+    method: "POST",
+    body: fd
+  })
+  .then(response => {
+    console.log("Backend response:", response.status);
 
-  const gCalUrl =
-    `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&details=${encodeURIComponent(details)}&dates=${formatDate(start)}/${formatDate(end)}`;
-
-  function finishSync() {
     syncStatus.style.display = 'none';
 
     if (typeof confetti === 'function') {
-      confetti({
-        particleCount: 150,
-        spread: 80,
-        origin: { y: 0.6 }
-      });
+      confetti({ particleCount: 150, spread: 80, origin: { y: 0.6 } });
     }
 
     window.location.href = gCalUrl;
-  }
+  })
+  .catch(err => {
+    console.error("Ralat penghantaran:", err);
 
-  // Hantar ke Google Sheet
-  if (GOOGLE_SHEET_WEBAPP_URL) {
+    syncStatus.style.display = 'none';
 
-    const fd = new FormData();
-    fd.append("date", payload.date);
-    fd.append("time", payload.time);
-    fd.append("age", payload.age);
-    fd.append("clinic", payload.clinic);
-    fd.append("created", payload.created);
+    // Walaupun gagal simpan ke Sheet, masih buka Google Calendar
+    window.location.href = gCalUrl;
+  });
 
-    fetch(GOOGLE_SHEET_WEBAPP_URL, {
-      method: "POST",
-      body: fd
-    })
-    .then(response => {
-      console.log("Backend response:", response.status);
-      finishSync();
-    })
-    .catch(error => {
-      console.error("Ralat penghantaran:", error);
-      finishSync();
-    });
+}
+// ----------------------------------------------------
 
-  } else {
-    finishSync();
-  }
-}</script>
+ }
+</script>
 
 </body>
 </html>
