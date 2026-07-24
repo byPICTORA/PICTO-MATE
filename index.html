@@ -994,7 +994,6 @@ function toggleFaq(element) {
         icon.innerText = '▲';
     }
 }
-
 function processTcaSyncAndDownload() {
   const dateVal = document.getElementById('tca-date').value;
   const timeVal = document.getElementById('tca-time').value;
@@ -1010,7 +1009,7 @@ function processTcaSyncAndDownload() {
   const syncStatus = document.getElementById('sync-status');
   syncStatus.style.display = 'flex';
 
-  // Menyimpan ke Local History telefon pintar
+  // Simpan ke Local History
   const history = JSON.parse(localStorage.getItem('pictoHistory') || '[]');
   const payload = {
     date: dateVal,
@@ -1019,27 +1018,11 @@ function processTcaSyncAndDownload() {
     clinic: clinic,
     created: new Date().toISOString()
   };
+
   history.push(payload);
   localStorage.setItem('pictoHistory', JSON.stringify(history));
 
-  // --- FUNGSI LIVE DATA COLLECTION KE GOOGLE SHEET ---
- if (GOOGLE_SHEET_WEBAPP_URL) {
-  fetch(GOOGLE_SHEET_WEBAPP_URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: (()=>{const fd=new FormData();Object.entries(payload).forEach(([k,v])=>fd.append(k,v));return fd;})()
-  })
-  .then(response => {
-    console.log("Backend response:", response.status);
-  })
-  .catch(err => {
-    console.error("Ralat penghantaran:", err);
-  });
-}
-  // ----------------------------------------------------
-
+  // Google Calendar
   const start = new Date(`${dateVal}T${timeVal}:00`);
   const end = new Date(start.getTime() + 30 * 60000);
 
@@ -1048,21 +1031,59 @@ function processTcaSyncAndDownload() {
   }
 
   const title = `Temujanji Klinik Anak (${clinic}) - ${age}`;
-  const details = `PICTO MATE\n\nLawatan perkembangan kanak-kanak di ${clinic}.\n\nSila hubungi PIC/nurse in charge sekiranya tidak dapat hadir/ menukar temujanji\n\nSila hadir 30 minit awal.`;
-  const gCalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&details=${encodeURIComponent(details)}&dates=${formatDate(start)}/${formatDate(end)}`;
+  const details =
+`PICTO MATE
 
-  setTimeout(() => {
-  syncStatus.style.display = 'none';
+Lawatan perkembangan kanak-kanak di ${clinic}.
 
-  if (typeof confetti === 'function') {
-    confetti({ particleCount: 150, spread: 80, origin: { y: 0.6 } });
+Sila hubungi PIC/Nurse In Charge sekiranya tidak dapat hadir atau ingin menukar temujanji.
+
+Sila hadir 30 minit awal.`;
+
+  const gCalUrl =
+    `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&details=${encodeURIComponent(details)}&dates=${formatDate(start)}/${formatDate(end)}`;
+
+  function finishSync() {
+    syncStatus.style.display = 'none';
+
+    if (typeof confetti === 'function') {
+      confetti({
+        particleCount: 150,
+        spread: 80,
+        origin: { y: 0.6 }
+      });
+    }
+
+    window.location.href = gCalUrl;
   }
 
-  window.location.href = gCalUrl;
+  // Hantar ke Google Sheet
+  if (GOOGLE_SHEET_WEBAPP_URL) {
 
-}, 800);
-}
-</script>
+    const fd = new FormData();
+    fd.append("date", payload.date);
+    fd.append("time", payload.time);
+    fd.append("age", payload.age);
+    fd.append("clinic", payload.clinic);
+    fd.append("created", payload.created);
+
+    fetch(GOOGLE_SHEET_WEBAPP_URL, {
+      method: "POST",
+      body: fd
+    })
+    .then(response => {
+      console.log("Backend response:", response.status);
+      finishSync();
+    })
+    .catch(error => {
+      console.error("Ralat penghantaran:", error);
+      finishSync();
+    });
+
+  } else {
+    finishSync();
+  }
+}</script>
 
 </body>
 </html>
